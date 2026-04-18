@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="00398738-25b6-4737-adcb-cdfe8559eb1c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/Dependente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dependente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pessoa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

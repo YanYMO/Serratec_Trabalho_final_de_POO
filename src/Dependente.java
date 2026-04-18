@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.UUID;
+
 public final class Dependente extends Pessoa {
     private UUID idDependente;
     private Funcionario funcionario;
