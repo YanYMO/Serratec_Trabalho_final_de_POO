@@ -1,46 +1,36 @@
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.UUID;
 
-public final class FolhaPagamento implements Contracheque{
-    private Integer codigo;
-    private Funcionario funcionario;
-    private Date LocalDate;
+public final class FolhaPagamento {
+    private UUID codigo;
+    private String nomeFuncionario;
+    private String cpf;
+    private LocalDate data;
     private Double descontoINSS;
     private Double descontoIR;
     private Double salarioLiquido;
 
-    public FolhaPagamento(Integer codigo, Funcionario funcionario) {
-        this.codigo = codigo;
-        this.funcionario = funcionario;
-        this.LocalDate = LocalDate;
+    public FolhaPagamento(Funcionario funcionario) {
+        this.codigo = UUID.randomUUID();
+        this.data = LocalDate.now();
         this.descontoINSS = funcionario.getDescontoINSS();
         this.descontoIR = funcionario.getDescontoIR();
-        this.salarioLiquido = 0.0;
+        this.salarioLiquido = calculaSalarioLiquido(funcionario);
     }
 
+    public FolhaPagamento() {
+    }
 
-    public Integer getCodigo() {
+    public Double calculaSalarioLiquido(Funcionario funcionario) {
+        return salarioLiquido = funcionario.getSalarioBruto() - funcionario.getDescontoINSS() - funcionario.getDescontoIR();
+    }
+
+    public UUID getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-
-    public Date getLocalDate() {
-        return LocalDate;
-    }
-
-    public void setLocalDate(Date localDate) {
-        LocalDate = localDate;
+    public LocalDate getLocalDate() {
+        return data;
     }
 
     public Double getDescontoINSS() {
@@ -57,5 +47,17 @@ public final class FolhaPagamento implements Contracheque{
 
     public void setDescontoIR(Double descontoIR) {
         this.descontoIR = descontoIR;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public Double getSalarioLiquido() {
+        return salarioLiquido;
+    }
+
+    public String getNomeFuncionario() {
+        return nomeFuncionario;
     }
 }

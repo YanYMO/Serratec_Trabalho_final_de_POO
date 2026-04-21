@@ -4,11 +4,10 @@ import java.util.UUID;
 
 public final class Dependente extends Pessoa {
     private UUID idDependente;
-    private Funcionario funcionario;
     private Parentesco parentesco;
     private static final Integer idadeMinima = 18;
 
-    public Dependente(String nome, String cpf, String dataNascimento, Parentesco parentesco) {
+    public Dependente(String nome, String cpf, String dataNascimento, String parentesco) {
         super(nome, cpf, dataNascimento);
         this.idDependente = UUID.randomUUID();
         this.parentesco = Parentesco.valueOf(parentesco);
@@ -22,11 +21,25 @@ public final class Dependente extends Pessoa {
         }
     }
 
-    public Funcionario getFuncionario() {
-        return funcionario;
+    @Override
+    public String toString() {
+        return "Dependente{" +
+                "idDependente=" + idDependente +
+                ", parentesco=" + parentesco +
+                '}';
+    }
+
+    public UUID getIdDependente() {
+        return idDependente;
     }
 
     public Parentesco getParentesco() {
         return parentesco;
     }
+
+    public void setParentesco(Parentesco parentesco) {
+        this.parentesco = parentesco;
+    }
+
+
 }
