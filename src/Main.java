@@ -1,5 +1,3 @@
-//package br.com.FolhaPagamento.main;
-
 import br.com.FolhaPagamento.dao.DependenteDAO;
 import br.com.FolhaPagamento.dao.FolhaPagamentoDAO;
 import br.com.FolhaPagamento.dao.FuncionarioDAO;
